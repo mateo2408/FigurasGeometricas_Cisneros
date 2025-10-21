@@ -1,0 +1,24 @@
+package org.example
+class Hexagono extends FiguraGeometrica {
+    private double lado
+    Hexagono(double lado) {
+        super("Hexágono")
+        this.lado = lado
+    }
+    double getLado() {
+        return lado
+    }
+    @Override
+    double calcularArea() {
+        // Fórmula: (3 * √3 * lado²) / 2
+        return (3 * Math.sqrt(3) * lado * lado) / 2
+    }
+    @Override
+    double calcularPerimetro() {
+        return 6 * lado
+    }
+    @Override
+    String obtenerDatos() {
+        return String.format("Lado: %.2f", lado)
+    }
+}

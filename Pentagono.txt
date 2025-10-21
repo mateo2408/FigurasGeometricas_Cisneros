@@ -1,0 +1,26 @@
+package org.example
+class Pentagono extends FiguraGeometrica {
+    private double lado
+    Pentagono(double lado) {
+        super("Pentágono")
+        this.lado = lado
+    }
+    double getLado() {
+        return lado
+    }
+    @Override
+    double calcularArea() {
+        // Fórmula: (perimetro * apotema) / 2
+        // Apotema = lado / (2 * tan(36°))
+        double apotema = lado / (2 * Math.tan(Math.toRadians(36)))
+        return (calcularPerimetro() * apotema) / 2
+    }
+    @Override
+    double calcularPerimetro() {
+        return 5 * lado
+    }
+    @Override
+    String obtenerDatos() {
+        return String.format("Lado: %.2f", lado)
+    }
+}
